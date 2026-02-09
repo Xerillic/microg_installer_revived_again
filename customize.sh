@@ -30,16 +30,6 @@ ui_print "  v5.4.0"
 ui_print "==================================="
 ui_print " "
 
-ui_print "→ Checking for metamodule..."
-if [ ! -d "/data/adb/metamodule" ] || [ ! -f "/data/adb/metamodule/module.prop" ]; then
-    abort "✗ ERROR: No metamodule found. Please install a metamodule to /data/adb/metamodule before continuing."
-fi
-
-META_NAME="$(head -n1 /data/adb/metamodule/module.prop | cut -d= -f2)"
-if [ -z "$META_NAME" ]; then
-    abort "✗ ERROR: metamodule not detected. Please install a valid metamodule."
-fi
-ui_print "  ✓ Metamodule detected: $META_NAME"
 
 ui_print " "
 ui_print "→ Checking com.google.android.gms..."
